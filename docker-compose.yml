@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+ tic_tac_toe:
+   image: node:alpine
+   container_name: tic_tac_toe
+   entrypoint: /bin/sh
+   ports:
+     - 5173:5173
+   working_dir: /srv/app
+   volumes:
+     - type: bind
+       source: ./
+       target: /srv/app
+   tty: true
